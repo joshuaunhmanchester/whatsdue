@@ -1,0 +1,36 @@
+<h1>Editing user</h1>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <label>First Name</label><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <label>Last Name</label><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <label>School Name</label><br />
+    <%= f.text_field :school_name %>
+  </div>
+  <div class="field">
+    <label>Email (username)</label><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <label>Password</label><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions"><%= f.submit "Sign Up" %></div>
+<% end %>

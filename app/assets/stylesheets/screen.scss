@@ -1,0 +1,716 @@
+
+/*---------------------------------------------------------------------------
+Imports*/
+
+@import "susy";
+@import "breakpoint";
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700);
+
+
+/*---------------------------------------------------------------------------
+Color Palette*/
+
+$font-dark: #2b2b2b;
+$dark-grey: #3a3a3c;
+$light-grey: #dfe3eb;
+$orange: coral;
+$salmon-red: #FF7D6C;
+$teal: #5fc1d8;
+$dark-teal: #1F788C;
+
+/*---------------------------------------------------------------------------
+Breakpoints*/
+
+$iphone-portrait: 320px;
+$iphone-landscape: 480px;
+$ipad-portrait: 768px;
+$ipad-landscape: 1024px;
+
+// ---------------------------------------------------------------------------
+// Font Settings
+
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+// ---------------------------------------------------------------------------
+// Custom Functions
+
+@function pxtoem($px, $base: $base-font-size){
+	@return ($px / $base) + 0em;
+}
+
+
+/*---------------------------------------------------------------------------
+Site wide styles */
+
+body, html { 
+	font-size: 100%; 
+	font-family: 'Roboto';
+	padding: 0; 
+	margin: 0;
+	color: #2b2b2b;
+}
+
+h1 {
+	color: white;
+	font-family: 'Roboto';
+	font-weight: 200;
+	font-size: 36px;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	font-size: 26px;
+	font-weight: 300;
+
+	&.skinny-with-border {
+		padding: 0px 10px 5px;
+		border-bottom: 1px solid #dfe3eb;
+		font-size: 28px;
+		margin: 0;
+		font-weight: 100;
+	}
+}
+
+h3 {
+	font-size: 22px;
+	font-weight: 300;
+}
+
+a {
+	color: #2b2b2b;
+	text-decoration: none;
+
+	&.header {
+		color: white;
+		text-decoration: none;
+	}
+}
+
+a.header:hover {
+	color: #5fc1d8;
+}
+
+a:hover {
+	color: lightgrey;
+}
+
+ul {
+	list-style: none;
+	font-weight: 300;
+	padding-left: 10px;
+}
+
+/*
+ * -- LAYOUT STYLES --
+ * This layout consists of three main elements, 
+ * #header (top navigation bar), 
+ * #nav (left nav), 
+ * #list (only on dashboard pages - contains list of classes)
+ * #main (main page content). 
+ * All 3 elements are within #layout
+ */
+
+/*
+* -- DESCRIPTION OF SYNTAX --
+* We are using the Susy framework (http://susy.oddbird.net/) which allows us to create a responsive grid very easily.
+* In our _base.scss file, we set four breakpoints 
+*/
+
+#layout {
+	margin: 0;
+	padding: 0;
+
+	#header {
+		position: static;
+		z-index: 1001;
+		left: 0;
+		right: 0;
+		background-color: #3a3a3c;
+		height: 50px;
+		border-bottom: 5px solid #5fc1d8;
+		width: 100%;
+		margin-bottom: 25px;
+
+		@include breakpoint($ipad-portrait) {
+			text-align: center;
+		}
+
+		#title {
+			display: inline-block;
+			margin-left: 2%;
+			right: 0;
+
+			@include breakpoint($ipad-portrait) {
+				margin-left: 0%;
+				position: relative;
+				right: 25px;
+			}
+		}
+
+		#welcome {
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			color: white;
+
+			#name {
+				display: none;
+
+				@include breakpoint($ipad-portrait) {
+					margin-right: 10px;
+					display: inline-block;
+				}
+			}
+
+			#menu-trigger {
+				vertical-align: bottom;
+				position: relative;
+				bottom: -3px;
+			}
+		}
+	}
+
+	#nav {
+		width: 100%;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		overflow: auto;
+		display: block;
+
+		@include breakpoint($ipad-portrait) {
+			width: 175px;
+			position: fixed;
+			background-color: lightgrey;
+		}
+	}
+
+	#menu {
+		display: none;
+		font-size: 26px;
+		font-weight: 300;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		background-color: $orange;
+		float: left;
+		width: 100%;
+
+		#menu-class-list {
+			display: block;
+			ul {
+				margin-top: 0;
+			}
+			h2 {
+				margin-bottom: 5px;
+			}
+			@include breakpoint($ipad-portrait) {
+				display: none;
+			}
+		}
+	}
+
+	#list {
+		font-size: 24px;
+		width: 100%;
+		height: 100%;
+		padding-left: 2%;
+		float: left;
+		font-weight: 300;
+		border-right: 1px solid $light-grey;
+		display: none;
+
+		@include breakpoint($ipad-portrait) {
+			width: 19%;
+			margin-left: 2%;
+			padding-left: 0%;
+			display: block;
+		}
+	}
+
+	#main {
+		width: 80%;
+		margin: 0 auto;
+		font-weight: 300;
+		font-size: 24px;
+
+		#hero {
+			float: left;
+			h2 {
+				text-align: center;
+				font-size: 30px;
+			}
+		}
+
+		#hero-text {
+			float: left;
+			margin-bottom: 45px;
+			margin-top: 45px;
+		}
+
+		.assignment-detail-wrapper {
+			.assignment {
+				margin-top: 25px;
+
+				h2 {
+					font-weight: 400;
+				}
+			}
+		}
+	}
+
+	#dashboard-main {
+		font-size: 22px;
+		width: 100%;
+		float: left;
+		font-weight: 300;
+
+		@include breakpoint($ipad-portrait) {
+			width: 74%;
+			margin-left: 2%;
+			margin-right: 2%;
+		}
+
+		#today {
+			margin-bottom: 15px;
+			margin-top: 15px;
+			padding-left: 10px;
+			font-size: 28px;
+
+			@include breakpoint($ipad-portrait) {
+				margin-bottom: 15px;
+				margin-top: 0%;
+				padding-left: 0%;
+				font-size: 28px;
+			}
+		}
+
+		.assignment-trigger, .exam-trigger {
+			cursor: pointer;
+		}
+
+		.assignment-details, .exam-details {
+			display: none;
+
+			margin-top: 15px;
+			border-top: 1px solid $light-grey;
+			padding-top: 15px;
+
+			.details {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+/*
+* -- UTILITY STYLES --
+*/
+#clear {
+	content: "";
+	display: table;
+	clear: both;
+}
+.no-margin {
+	margin-top: 0;
+	margin-left: 0;
+}
+.omega {
+	@include breakpoint($ipad-portrait) {
+		margin-right: 0% !important;
+		padding-right: 0% !important;
+		margin-left: 0% !important;
+		padding-left: 0% !important;
+	}
+}
+.pad-lr-10 {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+hr {
+	border: 0;
+	height: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.module {
+	position: relative;
+	width: 90%;
+	background: #fff;
+	border: 1px solid #dfe3eb;
+	margin-right: 5%;
+	margin-left: 5%;
+	margin-bottom: 25px;
+	float: left;
+
+	@include breakpoint($ipad-portrait) {
+		position: relative;
+		width: 48%;
+		background: #fff;
+		border: 1px solid $light-grey;
+		margin-right: 3%;
+		margin-left: 0;
+		float: left;
+	}
+
+	h2 {
+		padding: 14px 15px 12px;
+		border-bottom: 1px solid $light-grey;
+		font-size: 28px;
+		margin: 0;
+		font-weight: 100;
+	}
+
+	.inner {
+
+		.class-name {
+			text-transform: uppercase;
+			font-size: 10px;
+			color: lightgrey;
+			border: 1px solid $dark-grey;
+			border-radius: 3px;
+			padding: 2px;
+			position: relative;
+			bottom: 3px;
+		}
+
+		ul {
+			list-style: none;
+			margin-left: 15px;
+			margin-right: 15px;
+			padding-left: 0;
+
+			li {
+				font-size: 18px;
+				padding-left: 15px;
+				padding-bottom: 10px;
+				border-bottom: 3px solid $salmon-red;
+				margin-bottom: 25px;
+			}
+		}
+	}
+}
+.grid-2 {
+	clear: both;
+	margin: 0 auto;
+	width: 100%;
+	float: left;
+
+	.block-1-2 {
+		width: 100%;
+		margin-bottom: 30px;
+
+		.img {
+			float: left;
+			height: auto;
+			vertical-align: middle;
+			margin-right: 15px;
+
+			@include breakpoint($ipad-portrait) {
+				height: 100%;
+			}
+		}
+
+		h3 {
+			margin-bottom: 0;
+			font-size: 22px;
+			text-align: left;
+			font-weight: 400;
+			margin-top: 0;
+		}
+
+		p {
+			font-size: 16px;
+			margin-top: 5px;
+			text-align: left;
+
+			@include breakpoint($ipad-portrait) {
+				margin-bottom: 1em;
+			}	
+		}
+
+		@include breakpoint($ipad-portrait) {
+			width: 48%;
+			padding: 0px 2% 0 0;
+			margin-bottom: 0;
+			overflow: hidden;
+			margin-left: 0;
+			height: 140px;
+			float: left;
+		}
+	}
+}
+.grid-3 {
+	clear: both;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	float: left;
+	text-align: center;
+
+	.block-1-3 {
+		width: 100%;
+		margin-bottom: 50px;
+
+		.img {
+			width: 90%;
+			margin: 0 auto;
+		}
+
+		h3 {
+			margin-bottom: 0;
+			font-size: 26px;
+			@include breakpoint($ipad-portrait) {
+				margin-bottom: 1em;
+			}
+		}
+
+		p {
+			font-size: 22px;
+			margin-top: 5px;
+
+			@include breakpoint($ipad-portrait) {
+				margin-bottom: 1em;
+			}	
+		}
+
+		@include breakpoint($ipad-portrait) {
+			width: 32.2%;
+			margin-bottom: 0;
+			padding: 18px 0 0 0;
+			margin-left: 0;
+			float: left;
+			display: block;
+		}
+	}
+}
+.button {
+	cursor: pointer;
+	float: left;
+	line-height: 30px;
+	margin-right: 10px;
+	text-align: center;
+	border: 0;
+	
+	&.teal {
+		background-color: $teal;
+		color: white;
+		&:hover {
+			background-color: $dark-teal;
+		}
+	}
+	&.small {
+		width: 75px;
+		height: 30px;
+	}
+	&.large {
+		width: 200px;
+		height: 50px;
+	}
+
+	a, input {
+		color: white;
+	}
+
+	input {
+		background-color: $teal;
+		border: none;
+		font-size: 25px;
+	}
+
+	&.submit{
+		font-size: 22px;
+		line-height: 50px;
+	}
+}
+
+/*
+* -- FORM STYLES --
+*/
+.form-wrapper {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 25px 0 25px;
+
+	@include breakpoint($ipad-portrait) {
+		width: 50%;
+	}
+}
+
+.field {
+	width: 100%;
+	margin-bottom: 25px;
+	float: left;
+
+	label {
+		display: block;
+	}
+
+	input[type="text"], input[type="password"] {
+		width: 100%;
+		height: 50px;
+		padding: 3px;
+		font-size: 20px;
+	}
+
+	input[type="radio"] {
+		display: inline-block;
+	}
+
+	textarea {
+		width: 100%;
+		height: 100px;
+		text-align: left;
+		font-size: 20px;
+		padding: 3px;
+	}
+
+	&.small-text {
+		input[type="text"] {
+			width: 25%;
+
+			@include breakpoint($ipad-portrait) {
+				width: 8%;
+			}
+		}
+	}
+}
+.field-1-2 {
+	width: 100%;
+	margin-bottom: 25px;
+
+	@include breakpoint($ipad-portrait) {
+		width: 49%;
+		margin-right: 2%;
+		float: left;
+		margin-bottom: 25px;
+	}
+
+	&.omega {
+		margin-right: 0;
+	}
+
+	label {
+		display: block;
+	}
+
+	input[type="text"], input[type="password"] {
+		width: 100%;
+		height: 50px;
+		padding: 3px;
+		font-size: 20px;
+	}
+}
+
+/*
+ * -- ICON STYLES --
+ * We are using a font icon pack which allows us to use css and a font to show our icons instead of images.
+ * src: url('<%= asset_path('Chunkfive-webfont.eot') %>');
+ background:url(asset-path('right_bar_filler.jpg', image)) repeat-y;
+ */
+
+ @font-face {
+	font-family: 'Icomoon';
+	src:font-url('icomoon.eot?zh3f0n');
+	src:font-url('icomoon.eot?#iefixzh3f0n') format('embedded-opentype'),
+		font-url('icomoon.svg?zh3f0n#icomoon') format('svg'),
+		font-url('icomoon.woff?zh3f0n') format('woff'),
+		font-url('icomoon.ttf?zh3f0n') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// @font-face {
+// 	font-family: 'icomoon';
+// 	src: asset_path('icomoon.eot?zh3f0n', font);
+// 	src: asset_path('icomoon.eot?#iefixzh3f0n', font) format('embedded-opentype'),
+// 		 asset_path('icomoon.woff?zh3f0n', font) format('woff'),
+// 		 asset_path('icomoon.ttf?zh3f0n', font) format('truetype'),
+// 		 asset_path('icomoon.svg?zh3f0n#icomoon', font) format('svg');
+
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon {
+	&.button {
+		cursor: pointer;
+	}
+	&.small {
+		font-size: 1em;
+	}
+	&.medium {
+		font-size: 2em;
+	}
+	&.large {
+		font-size: 5em;
+	}
+	&.white {
+		color: white;
+	}
+	&.dark {
+		color: #3a3a3c;
+	}
+	&.move-right-15 {
+		/* This is mainly for the mug icon which seems to align it self to the left a bit. */
+		position: relative;
+		left: 15px;
+	}
+}
+
+.inline-icon-button {
+	display: inline-block;
+	float: right;
+	position: relative;
+	top: 7px;
+}
+
+.icon-mobile:before {
+	content: "\e600";
+}
+.icon-menu:before {
+	content: "\e602";
+}
+.icon-cogs:before {
+	content: "\e603";
+}
+.icon-home:before {
+	content: "\e601";
+}
+.icon-mug:before {
+	content: "\e604";
+}
+.icon-books:before {
+	content: "\e605";
+}
+.icon-checkbox-checked:before {
+	content: "\e606";
+}
+.icon-drawer:before {
+	content: "\e607";
+}
+.icon-pencil:before {
+	content: "\e608";
+}
+.icon-plus:before {
+	content: "\e609";
+}
+.icon-cancel-circle:before {
+	content: "\e60a";
+}
+

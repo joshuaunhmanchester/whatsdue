@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Exam:</strong>
+  <%= @exam.exam_id %>
+</p>
+
+<p>
+  <strong>Exam name:</strong>
+  <%= @exam.exam_name %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @exam.details %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @exam.comments %>
+</p>
+
+<p>
+  <strong>Date created:</strong>
+  <%= @exam.date_created %>
+</p>
+
+<p>
+  <strong>Date of exam:</strong>
+  <%= @exam.date_of_exam %>
+</p>
+
+<p>
+  <strong>Is complete:</strong>
+  <%= @exam.is_complete %>
+</p>
+
+<p>
+  <strong>Grade received:</strong>
+  <%= @exam.grade_received %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @exam.course_id %>
+</p>
+
+<%= link_to 'Edit', edit_exam_path(@exam) %> |
+<%= link_to 'Back', exams_path %>

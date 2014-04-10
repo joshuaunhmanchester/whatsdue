@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Assignment:</strong>
+  <%= @assignment.assignment_id %>
+</p>
+
+<p>
+  <strong>Assignment name:</strong>
+  <%= @assignment.assignment_name %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @assignment.details %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @assignment.priority %>
+</p>
+
+<p>
+  <strong>Date created:</strong>
+  <%= @assignment.date_created %>
+</p>
+
+<p>
+  <strong>Date due:</strong>
+  <%= @assignment.date_due %>
+</p>
+
+<p>
+  <strong>Is complete:</strong>
+  <%= @assignment.is_complete %>
+</p>
+
+<p>
+  <strong>Grade received:</strong>
+  <%= @assignment.grade_received %>
+</p>
+
+<p>
+  <strong>Cours:</strong>
+  <%= @assignment.cours_id %>
+</p>
+
+<%= link_to 'Edit', edit_assignment_path(@assignment) %> |
+<%= link_to 'Back', assignments_path %>

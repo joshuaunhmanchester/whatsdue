@@ -1,0 +1,53 @@
+<%= form_for(@exam) do |f| %>
+  <% if @exam.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exam.errors.count, "error") %> prohibited this exam from being saved:</h2>
+
+      <ul>
+      <% @exam.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :exam_id %><br>
+    <%= f.number_field :exam_id %>
+  </div>
+  <div class="field">
+    <%= f.label :exam_name %><br>
+    <%= f.text_field :exam_name %>
+  </div>
+  <div class="field">
+    <%= f.label :details %><br>
+    <%= f.text_field :details %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_field :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :date_created %><br>
+    <%= f.datetime_select :date_created %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_exam %><br>
+    <%= f.datetime_select :date_of_exam %>
+  </div>
+  <div class="field">
+    <%= f.label :is_complete %><br>
+    <%= f.check_box :is_complete %>
+  </div>
+  <div class="field">
+    <%= f.label :grade_received %><br>
+    <%= f.number_field :grade_received %>
+  </div>
+  <div class="field">
+    <%= f.label :course_id %><br>
+    <%= f.number_field :course_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

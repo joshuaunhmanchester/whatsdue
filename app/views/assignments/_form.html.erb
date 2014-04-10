@@ -1,0 +1,53 @@
+<%= form_for(@assignment) do |f| %>
+  <% if @assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
+
+      <ul>
+      <% @assignment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :assignment_id %><br>
+    <%= f.number_field :assignment_id %>
+  </div>
+  <div class="field">
+    <%= f.label :assignment_name %><br>
+    <%= f.text_field :assignment_name %>
+  </div>
+  <div class="field">
+    <%= f.label :details %><br>
+    <%= f.text_field :details %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br>
+    <%= f.number_field :priority %>
+  </div>
+  <div class="field">
+    <%= f.label :date_created %><br>
+    <%= f.datetime_select :date_created %>
+  </div>
+  <div class="field">
+    <%= f.label :date_due %><br>
+    <%= f.datetime_select :date_due %>
+  </div>
+  <div class="field">
+    <%= f.label :is_complete %><br>
+    <%= f.check_box :is_complete %>
+  </div>
+  <div class="field">
+    <%= f.label :grade_received %><br>
+    <%= f.number_field :grade_received %>
+  </div>
+  <div class="field">
+    <%= f.label :cours_id %><br>
+    <%= f.number_field :cours_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

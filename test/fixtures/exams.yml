@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exam_id: 1
+  exam_name: MyString
+  details: MyString
+  comments: MyString
+  date_created: 2014-04-06 12:59:56
+  date_of_exam: 2014-04-06 12:59:56
+  is_complete: false
+  grade_received: 1
+  course_id: 1
+
+two:
+  exam_id: 1
+  exam_name: MyString
+  details: MyString
+  comments: MyString
+  date_created: 2014-04-06 12:59:56
+  date_of_exam: 2014-04-06 12:59:56
+  is_complete: false
+  grade_received: 1
+  course_id: 1
