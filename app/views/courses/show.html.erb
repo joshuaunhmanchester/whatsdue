@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Course:</strong>
-  <%= @course.course_id %>
-</p>
-
-<p>
   <strong>Class name:</strong>
   <%= @course.class_name %>
 </p>
@@ -18,11 +13,6 @@
 <p>
   <strong>Teacher name:</strong>
   <%= @course.teacher_name %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @course.user_id %>
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |

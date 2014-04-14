@@ -4,7 +4,17 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    if session[:user_id].nil?
+      redirect('/')
+    end
+
+    #@courses = Course.all
+    #select only the records for this user
+    @courses = Course.where("user_id = ?", session[:user_id]) 
+    #displays message if no courses have been added yet
+    if @courses.empty?
+      flash[:notice] = "Please enter your first course!"    
+    end  
   end
 
   # GET /courses/1
@@ -69,6 +79,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:course_id, :class_name, :details, :teacher_name, :user_id)
+      params.require(:course).permit(:course_id, :class_name, :details, :teacher_name, :user_id).merge(user_id: session[:user_id])
     end
 end
