@@ -11,7 +11,7 @@
       <th>Date due</th>
       <th>Is complete</th>
       <th>Grade received</th>
-      <th>Cours</th>
+      <th>Course</th>
       <th></th>
       <th></th>
       <th></th>
@@ -29,7 +29,7 @@
         <td><%= assignment.date_due %></td>
         <td><%= assignment.is_complete %></td>
         <td><%= assignment.grade_received %></td>
-        <td><%= assignment.cours_id %></td>
+        <td><%= assignment.course_id %></td>
         <td><%= link_to 'Show', assignment %></td>
         <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
         <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -8,6 +8,7 @@ Bundler.require(:default, Rails.env)
 
 module Whatsdue
   class Application < Rails::Application
+    config.i18n.enforce_available_locales = false
     config.compass.require "susy"
     require "breakpoint"
     config.assets.paths << "#{Rails.root}/app/assets/fonts"

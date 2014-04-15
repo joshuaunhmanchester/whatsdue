@@ -19,6 +19,6 @@ class SessionsController < ApplicationController
   # Logs out a user by deleting the :user_id session.
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: "Logged out!"
+    redirect_to :controller => 'home', :action => 'index'
   end
 end

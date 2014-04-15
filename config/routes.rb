@@ -1,8 +1,10 @@
 Whatsdue::Application.routes.draw do
+  # Custom URL Routes for some pages to be more user friendly.
   get '/', to: 'home#index', as: 'home'
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
 
+  # Normal routes that will hit the "index" action in each of these controllers.
   resources :sessions
 
   resources :exams
@@ -12,6 +14,8 @@ Whatsdue::Application.routes.draw do
   resources :courses
 
   resources :users
+
+  resources :dashboard
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
