@@ -25,6 +25,7 @@ class AssignmentsController < ApplicationController
 
   # GET /assignments/1/edit
   def edit
+    @courses = Course.where("user_id = ?", session[:user_id])
   end
 
   def create
@@ -35,7 +36,7 @@ class AssignmentsController < ApplicationController
 
     # Save.
     if @assignment.save
-      redirect('/dashboard')
+      redirect_to :controller => 'dashboard', :action => 'index'
     else
       # Failed to create, send them back to view with errors.
       render "new"

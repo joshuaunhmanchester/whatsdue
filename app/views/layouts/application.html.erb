@@ -6,9 +6,29 @@
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	  <%= csrf_meta_tags %>
 	</head>
-<body>
+	<body>
 
-<%= yield %>
+		<div id="layout">
+			<div id="header">
+				<span id="title"><h1><a class="header" href="home.html">What's Due</a></h1></span>
+				<span id="welcome">
+					<!-- ADD LOGIC HERE TO CHECK IF USER SESSION IS VALID - IF SO LOAD UP USER RECORD AND DISPLAY WELCOME, <FIRSTNAME> - IF NOT LOGGED IN, SHOW THE REGISTER AND SIGNIN LINKS INSTEAD -->
+					<span class="button teal small"><a href="/signup">Register</a></span>
+					<span class="button teal small"><a href="/login">Sign In</a></span>
+					<span id="name">Welcome Joshua!</span>
+					<span id="menu-trigger" class="icon icon-menu medium white"></span>
+				</span>
+				<div id="menu">
+					<div class="pad-lr-10">
+						<!-- IF LOGGED IN, WE'LL POPULATE THIS MENU WITH WHATEVER WE THINK WILL BE GOOD - AT LEAST A LINK TO EDIT PROFILE. -->
+						This is my menu content area.
+					</div>
+				</div>
+			</div>
+			<div id="main">
+				<%= yield %>
+			</div>
+		</div>
 
-</body>
+	</body>
 </html>

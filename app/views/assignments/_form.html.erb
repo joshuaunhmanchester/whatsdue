@@ -1,44 +1,51 @@
 <%= form_for(@assignment) do |f| %>
-  <% if @assignment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
 
-      <ul>
-      <% @assignment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <% if @assignment.errors.any? %>
+        <div class="error_explanation">
+            <ul>
+                <% @assignment.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <label>Course</label>
+      <select name="select_course">
+        <option value="">- Select a Course - </option>
+        <% @courses.each do |course| %>
+          <option value="<%= course.id %>"><%= course.class_name %></option>
+        <% end %>
+      </select>
     </div>
-  <% end %>
 
+    <div class="field">
+      <label>Assignment Name</label>
+      <%= f.text_field :assignment_name %>
+    </div>
+    <div class="field">
+       <label>Assignment Details</label>
+      <%= f.text_field :details %>
+    </div>
+    <div class="field">
+       <label>Priority for assignment (1 - 5; 5 being most important)</label>
+       <%= f.text_field :priority %>
+    </div>
+    <div class="field datepicker">
+      <label>Due Date</label>
+      <%= f.datetime_select :date_due, ampm: true, order: [:month, :day, :year] %>
+    </div>
+    <div class="field datepicker">
+      <label>Is Complete</label>
+      <%= f.check_box :is_complete %>
+    </div>
+    <div class="field datepicker">
+      <%= f.label :is_complete %>
+      <%= f.text_field :grade_received, :class => "small" %>
+    </div>
 
-  <div class="field">
-    <label>Course</label><br>
-    <select name="select_course">
-      <option value="">- Select a Course - </option>
-      <% @courses.each do |course| %>
-        <option value="<%= course.id %>"><%= course.class_name %></option>
-      <% end %>
-    </select>
-    
-  </div>
-  <div class="field">
-    <%= f.label :assignment_name %><br>
-    <%= f.text_field :assignment_name %>
-  </div>
-  <div class="field">
-    <%= f.label :details %><br>
-    <%= f.text_field :details %>
-  </div>
-  <div class="field">
-    <%= f.label :priority %><br>
-    <%= f.text_field :priority %>
-  </div>
-  <div class="field datepicker">
-    <%= f.label :date_due %><br>
-    <%= f.datetime_select :date_due %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+        <%= f.submit "Save Assignment", :class => "button submit teal" %>
+    </div>
 <% end %>

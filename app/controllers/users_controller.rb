@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to courses_controller_create
+      redirect_to :controller => 'courses', :action => 'new', :notice => 'To get started, create your first course'
     else
       render "new"
     end

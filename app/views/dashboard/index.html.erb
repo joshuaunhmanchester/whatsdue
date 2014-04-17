@@ -1,126 +1,88 @@
 
-<div id="layout">
-	<div id="header">
-		<span id="title"><h1><a class="header" href="home.html">What's Due - Dashboard</a></h1></span>
-		<span id="welcome">
-			<span id="name">Welcome Joshua!</span>
-			<span id="menu-trigger" class="icon icon-menu medium white"></span>
-		</span>
-		<div id="menu">
-			<div class="pad-lr-10">
-				This is my menu content area.
-
-				<div id="menu-class-list">
-					<hr />
-					<!-- This class list only shows in mobile. -->
-					<h2>My Classes</h2>
-					<ul>
-						<li>CIS 725</li> 
-						<li>CIS 795</li>
-					</ul>
-				</div>
-			</div>
+<div id="list">
+	<!-- This class list only shows in desktop. -->
+	<h2 class="no-margin skinny-with-border">
+		My Classes
+		<div class="inline-icon-button">
+			<a href="courses/new" title="Add a new class"><span class="icon icon-plus small"></span></a>
 		</div>
-	</div>
-	<div id="list">
-		<!-- This class list only shows in desktop. -->
-		<h2 class="no-margin skinny-with-border">
-			My Classes
+	</h2>
+	<ul>
+		<% @courses.each do |course| %>
+			<li>
+				<a href="<%= edit_course_path(course) %>" title="<%= course.class_name %>"><%= course.course_number %></a>
+			</li> 
+		<% end %>
+	</ul>
+</div>
+<div id="dashboard-main">
+	<div id="today">Today is March 12th, 2014</div>
+	<div class="module">
+		<h2 title="Listing your upcoming Assignments and Tasks sorted by Due Date and Priority">
+			Assignments / Tasks
 			<div class="inline-icon-button">
-				<a href="add-class.html" title="Add a new class"><span class="icon icon-plus small"></span></a>
+				<a href="assignments/new" title="Add a new assignment"><span class="icon icon-plus small"></span></a>
 			</div>
 		</h2>
-		<ul>
-			<li><a href="view-class.html" title="CIS 725">CIS 725</a></li> 
-			<li><a href="view-class.html" title="CIS 795">CIS 795</a></li>
-		</ul>
-	</div>
-	<div id="dashboard-main">
-		<div id="today">Today is March 12th, 2014</div>
-		<div class="module">
-			<h2 title="Listing your upcoming Assignments and Tasks sorted by Due Date and Priority">
-				Assignments / Tasks
-				<div class="inline-icon-button">
-					<a href="add-assignment.html" title="Add a new assignment"><span class="icon icon-plus small"></span></a>
-				</div>
-			</h2>
-			<div class="inner">
-				<ul>
+		<div class="inner">
+			<ul>
+				<% for assignment in @assignments %>
 					<li>
 						<div class="top">
-							<span class="class-name">CIS 725</span> 
-							<span class="assignment-trigger" title="Click to view details">
-								Complete project proposal
+							<span class="class-number"><%= assignment.course.course_number %></span>
+							<span class="assignment-trigger" title="Click to view assignment details">
+								<%= assignment.assignment_name %>
 							</span>
 						</div>
 						<div class="bottom">
-							Due Today
+							Due <%= assignment.date_due.to_formatted_s(:long_ordinal) %>
 						</div>
 						<div class="assignment-details">
 							<div class="details">
-								Grade Received: N/A
+								Grade Recieved: <%= assignment.grade_received %>
 							</div>
 							<div class="details">
 								Assignment Details: <br />
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								<%= assignment.details %> <br /><br />
+								Priority: <%= assignment.priority %>/5
 							</div>
-							<a href="view-assignment.html">View Assignment</a>
+							<a href="<%= edit_assignment_path(assignment) %>" title="<%= assignment.assignment_name %>">View/Edit Assignment</a>
 						</div>
-					</li> 
-					<li>
-						<div class="top">
-							<span class="class-name">CS 411</span> 
-							<span class="assignment-trigger" title="Click to view details">
-								Complete interview transcript
-							</span>
-						</div>
-						<div class="bottom">
-							Due Tomorrow
-						</div>
-						<div class="assignment-details">
-							<div class="details">
-								Grade Received: N/A
-							</div>
-							<div class="details">
-								Assignment Details: <br />
-							</div>
-							<a href="view-assignment.html">View Assignment</a>
-						</div>
-					</li> 
-				</ul>
-			</div>
+					</li>
+				<% end %>
+			</ul>
 		</div>
-		<div class="module omega">
-			<h2 title="Listing your upcoming Exams and Projects sorted by Due Date and Priority">
-				Exams / Projects
-				<div class="inline-icon-button">
-					<a href="add-exam.html" title="Add a new exam"><span class="icon icon-plus small"></span></a>
-				</div>
-			</h2>
-			<div class="inner">
-				<ul>
-					<li>
-						<div class="top">
-							<span class="class-name">CIS 795</span> 
-							<span class="exam-trigger" title="Click to view details">
-								LISP Exam
-							</span>
-						</div>
-						<div class="bottom">
-							When: Today
-						</div>
-						<div class="exam-details">
-							<div class="details">
-								Grade Received: N/A
-							</div>
-							<div class="details">
-								Exam/Project Details: <br />
-							</div>
-							<a href="view-exam.html">View Exam</a>
-						</div>
-					</li> 
-				</ul>
+	</div>
+	<div class="module omega">
+		<h2 title="Listing your upcoming Exams and Projects sorted by Due Date and Priority">
+			Exams / Projects
+			<div class="inline-icon-button">
+				<a href="add-exam.html" title="Add a new exam"><span class="icon icon-plus small"></span></a>
 			</div>
+		</h2>
+		<div class="inner">
+			<ul>
+				<li>
+					<div class="top">
+						<span class="class-number">CIS 795</span> 
+						<span class="exam-trigger" title="Click to view details">
+							LISP Exam
+						</span>
+					</div>
+					<div class="bottom">
+						When: Today
+					</div>
+					<div class="exam-details">
+						<div class="details">
+							Grade Received: N/A
+						</div>
+						<div class="details">
+							Exam/Project Details: <br />
+						</div>
+						<a href="view-exam.html">View Exam</a>
+					</div>
+				</li> 
+			</ul>
 		</div>
 	</div>
 </div>

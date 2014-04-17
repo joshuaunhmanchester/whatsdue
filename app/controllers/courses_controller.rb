@@ -8,23 +8,31 @@ class CoursesController < ApplicationController
       redirect('/')
     end
 
-    #@courses = Course.all
-    #select only the records for this user
+    # Select only the records for this user.
     @courses = Course.where("user_id = ?", session[:user_id]) 
-    #displays message if no courses have been added yet
+
+    # Displays message if no courses have been added yet
     if @courses.empty?
       flash[:notice] = "Please enter your first course!"    
     end  
   end
 
   # GET /courses/1
-  # GET /courses/1.json
   def show
+    # Validate the user has access to this Course.
+    current_user_id = session[:user_id]
+    @course = Course.find_by_id(params[:id]);
+    if @course != nil && @course.user_id != current_user_id
+      redirect_to :controller => 'dashboard', :action => 'index', :notice => 'You do not have access to view this Course!'
+    end
   end
 
   # GET /courses/new
   def new
     @course = Course.new
+    if params[:notice] != nil
+      flash[:notice] = "#{params[:notice]}"  
+    end
   end
 
   # GET /courses/1/edit
@@ -32,9 +40,9 @@ class CoursesController < ApplicationController
   end
 
   # POST /courses
-  # POST /courses.json
   def create
     @course = Course.new(course_params)
+    # We are also assigning the Current Users (logged in) 'id' in the new Course object located in the course_params property.
 
     respond_to do |format|
       if @course.save
@@ -74,11 +82,11 @@ class CoursesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
-      @course = Course.find(params[:id])
+      @course = Course.find_by_id(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:course_id, :class_name, :details, :teacher_name, :user_id).merge(user_id: session[:user_id])
+      params.require(:course).permit(:course_id, :class_name, :course_number, :details, :teacher_name, :user_id).merge(user_id: session[:user_id])
     end
 end
