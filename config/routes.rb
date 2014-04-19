@@ -3,6 +3,7 @@ Whatsdue::Application.routes.draw do
   get '/', to: 'home#index', as: 'home'
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
 
   # Normal routes that will hit the "index" action in each of these controllers.
   resources :sessions

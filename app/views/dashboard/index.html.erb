@@ -25,32 +25,63 @@
 			</div>
 		</h2>
 		<div class="inner">
-			<ul>
-				<% for assignment in @assignments %>
-					<li>
-						<div class="top">
-							<span class="class-number"><%= assignment.course.course_number %></span>
-							<span class="assignment-trigger" title="Click to view assignment details">
-								<%= assignment.assignment_name %>
-							</span>
-						</div>
-						<div class="bottom">
-							Due <%= assignment.date_due.to_formatted_s(:long_ordinal) %>
-						</div>
-						<div class="assignment-details">
-							<div class="details">
-								Grade Recieved: <%= assignment.grade_received %>
+			<div class="list-header">
+				Upcoming Assignments
+			</div>
+			<% if @assignments.count > 0 %>
+				<ul class="upcoming">
+					<% for assignment in @assignments %>
+						<li>
+							<div class="top">
+								<span class="class-number"><%= assignment.course.course_number %></span>
+								<span class="assignment-trigger" title="Click to view assignment details">
+									<%= assignment.assignment_name %>
+								</span>
 							</div>
-							<div class="details">
-								Assignment Details: <br />
-								<%= assignment.details %> <br /><br />
-								Priority: <%= assignment.priority %>/5
+							<div class="bottom">
+								Due <%= assignment.date_due.to_formatted_s(:long_ordinal) %>
 							</div>
-							<a href="<%= edit_assignment_path(assignment) %>" title="<%= assignment.assignment_name %>">View/Edit Assignment</a>
-						</div>
-					</li>
-				<% end %>
-			</ul>
+							<div class="assignment-details">
+								<div class="details">
+									Grade Recieved: <%= assignment.grade_received %>
+								</div>
+								<div class="details">
+									Assignment Details: <br />
+									<%= assignment.details %> <br /><br />
+									Priority: <%= assignment.priority %>/5
+								</div>
+								<a href="<%= edit_assignment_path(assignment) %>" title="<%= assignment.assignment_name %>">View/Edit Assignment</a>
+							</div>
+						</li>
+					<% end %>
+				</ul>
+			<% else %>
+				<p class="notice">You have no assignments yet, click the "+" above to create one!</p>
+			<% end %>
+
+			<% if @completed_assignments.count > 0 %>
+				<div class="list-header">
+					Completed Assignments
+				</div>
+				<ul class="completed">
+					<% for completed_assignment in @completed_assignments %>
+						<li>
+							<div class="top">
+								<span class="class-number"><%= completed_assignment.course.course_number %></span>
+								<span class="assignment-trigger" title="Click to view assignment details">
+									<%= completed_assignment.assignment_name %>
+								</span>
+							</div>
+							<div class="bottom">
+								Grade Received <%= completed_assignment.grade_received %>
+							</div>
+						</li>
+					<% end %>
+				</ul>
+			<% else %>
+				<!-- <p class="notice">You have no completed assignments yet, click the "+" above to create one!</p> -->
+			<% end %>
+			
 		</div>
 	</div>
 	<div class="module omega">

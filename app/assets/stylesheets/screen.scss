@@ -115,6 +115,17 @@ ul {
 	border: 1px solid #f5aca6;
 }
 
+.notice {
+	padding: 5px;
+}
+
+.list-header {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 15px;
+	margin-top: 5px;
+}
+
 /*
  * -- LAYOUT STYLES --
  * This layout consists of three main elements, 
@@ -503,9 +514,10 @@ hr {
 	cursor: pointer;
 	float: left;
 	line-height: 30px;
-	margin-right: 10px;
+	margin: 0 10px 0 0px;
 	text-align: center;
 	border: 0;
+	padding: 3px;
 	
 	&.teal {
 		background-color: $teal;
