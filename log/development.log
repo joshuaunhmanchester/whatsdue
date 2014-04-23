@@ -27363,3 +27363,1696 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-17 18:13:23
 
 
 Started GET "/assets/icomoon.svg?zh3f0n" for 127.0.0.1 at 2014-04-17 18:13:23 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-23 07:34:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 731ms (Views: 707.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/assets/icomoon.woff?zh3f0n" for 127.0.0.1 at 2014-04-23 07:34:52 -0700
+
+
+Started GET "/login" for 127.0.0.1 at 2014-04-23 07:34:59 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-04-23 07:35:04 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 143ms (Views: 46.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-04-23 07:35:19 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NG74YfT8ixjLX3O+T6w3+l7R7WaY/JZcAOPxrrlscDI=", "user"=>{"first_name"=>"Colby", "last_name"=>"Johnson", "email"=>"colby@email.com", "school_name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'colby@email.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (44.4ms)[0m  INSERT INTO "users" ("created_at", "email", "first_name", "last_name", "password_digest", "school_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 23 Apr 2014 14:35:20 UTC +00:00], ["email", "colby@email.com"], ["first_name", "Colby"], ["last_name", "Johnson"], ["password_digest", "$2a$10$lNBjlpIQXY60FJma.9zm1.FzOnHjcls3T6JG6P.eCIW/Fm/8rNal."], ["school_name", ""], ["updated_at", Wed, 23 Apr 2014 14:35:20 UTC +00:00]]
+  [1m[36m (13.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/courses/new?notice=To+get+started%2C+create+your+first+course
+Completed 302 Found in 357ms (ActiveRecord: 58.2ms)
+
+
+Started GET "/courses/new?notice=To+get+started%2C+create+your+first+course" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+Processing by CoursesController#new as HTML
+  Parameters: {"notice"=>"To get started, create your first course"}
+  Rendered courses/_form.html.erb (8.9ms)
+  Rendered courses/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 49ms (Views: 18.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:20 -0700
+
+
+Started GET "/logout" for 127.0.0.1 at 2014-04-23 07:35:24 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-23 07:35:24 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-04-23 07:35:26 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NG74YfT8ixjLX3O+T6w3+l7R7WaY/JZcAOPxrrlscDI=", "email"=>"colby@email.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'colby@email.com' LIMIT 1
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 81ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[35mSQL (0.4ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" WHERE (user_id = 8)
+  Rendered dashboard/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 43ms (Views: 27.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 07:35:39 -0700
+
+
+Started GET "/courses/new" for 127.0.0.1 at 2014-04-23 07:35:50 -0700
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (1.7ms)
+  Rendered courses/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/courses" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+Processing by CoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NG74YfT8ixjLX3O+T6w3+l7R7WaY/JZcAOPxrrlscDI=", "course"=>{"class_name"=>"CIS550", "course_number"=>"COMP705", "details"=>"", "teacher_name"=>"Greene"}, "commit"=>"Save Class"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "courses" ("class_name", "course_number", "created_at", "details", "teacher_name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["class_name", "CIS550"], ["course_number", "COMP705"], ["created_at", Wed, 23 Apr 2014 14:36:05 UTC +00:00], ["details", ""], ["teacher_name", "Greene"], ["updated_at", Wed, 23 Apr 2014 14:36:05 UTC +00:00], ["user_id", 8]]
+  [1m[36m (27.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/courses/9
+Completed 302 Found in 34ms (ActiveRecord: 28.2ms)
+
+
+Started GET "/courses/9" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE "courses"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "courses".* FROM "courses" WHERE "courses"."id" = 9 LIMIT 1
+  Rendered courses/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:05 -0700
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 07:36:08 -0700
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[35mSQL (0.4ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses" WHERE (user_id = 8)
+  Rendered dashboard/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 16ms (Views: 9.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/add-exam.html" for 127.0.0.1 at 2014-04-23 07:36:15 -0700
+
+ActionController::RoutingError (No route matches [GET] "/add-exam.html"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (35.3ms)
+
+
+Started GET "/add-exam.html" for 127.0.0.1 at 2014-04-23 07:36:15 -0700
+
+ActionController::RoutingError (No route matches [GET] "/add-exam.html"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (27.4ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[35mSQL (0.3ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" WHERE (user_id = 8)
+  Rendered dashboard/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 07:36:17 -0700
+
+
+Started GET "/add-exam.html" for 127.0.0.1 at 2014-04-23 07:39:22 -0700
+
+ActionController::RoutingError (No route matches [GET] "/add-exam.html"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (29.2ms)
+
+
+Started GET "/add-exam.html" for 127.0.0.1 at 2014-04-23 07:39:22 -0700
+
+ActionController::RoutingError (No route matches [GET] "/add-exam.html"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (33.6ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[35mSQL (0.3ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" WHERE (user_id = 8)
+  Rendered dashboard/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 11ms (Views: 6.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 07:39:31 -0700
+
+
+Started GET "/assignments/new" for 127.0.0.1 at 2014-04-23 07:39:33 -0700
+Processing by AssignmentsController#new as HTML
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 8)[0m
+  Rendered assignments/_form.html.erb (76.0ms)
+  Rendered assignments/new.html.erb within layouts/application (79.7ms)
+Completed 200 OK in 94ms (Views: 91.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 07:43:25 -0700
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[35mSQL (0.2ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 8)[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 41ms (Views: 35.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 07:43:26 -0700
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2014-04-23 07:43:27 -0700
+Processing by ExamsController#new as HTML
+  Rendered exams/_form.html.erb (29.0ms)
+  Rendered exams/new.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assignments/new" for 127.0.0.1 at 2014-04-23 07:44:13 -0700
+Processing by AssignmentsController#new as HTML
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses" WHERE (user_id = 8)
+  Rendered assignments/_form.html.erb (6.7ms)
+  Rendered assignments/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2014-04-23 07:44:22 -0700
+Processing by ExamsController#new as HTML
+  Rendered exams/_form.html.erb (8.6ms)
+  Rendered exams/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+Processing by ExamsController#new as HTML
+  Rendered exams/_form.html.erb (10.3ms)
+  Rendered exams/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 07:45:53 -0700
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+Processing by ExamsController#new as HTML
+  Rendered exams/_form.html.erb (14.0ms)
+  Rendered exams/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 07:47:59 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 07:48:00 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 07:48:00 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 07:48:00 -0700
+
+
+Started POST "/exams" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+Processing by ExamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NG74YfT8ixjLX3O+T6w3+l7R7WaY/JZcAOPxrrlscDI=", "exam"=>{"exam_id"=>"Exam1", "exam_name"=>"Capstone", "details"=>"None", "comments"=>"Gonna fail", "date_created(1i)"=>"2014", "date_created(2i)"=>"4", "date_created(3i)"=>"23", "date_created(4i)"=>"14", "date_created(5i)"=>"44", "date_of_exam(1i)"=>"2014", "date_of_exam(2i)"=>"4", "date_of_exam(3i)"=>"23", "date_of_exam(4i)"=>"14", "date_of_exam(5i)"=>"44", "is_complete"=>"1", "grade_received"=>"A", "course_id"=>"505"}, "commit"=>"Create Exam"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "exams" ("comments", "course_id", "created_at", "date_created", "date_of_exam", "details", "exam_id", "exam_name", "grade_received", "is_complete", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["comments", "Gonna fail"], ["course_id", 505], ["created_at", Wed, 23 Apr 2014 14:48:37 UTC +00:00], ["date_created", Wed, 23 Apr 2014 14:44:00 UTC +00:00], ["date_of_exam", Wed, 23 Apr 2014 14:44:00 UTC +00:00], ["details", "None"], ["exam_id", 0], ["exam_name", "Capstone"], ["grade_received", 0], ["is_complete", true], ["updated_at", Wed, 23 Apr 2014 14:48:37 UTC +00:00]]
+  [1m[36m (22.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/exams/1
+Completed 302 Found in 27ms (ActiveRecord: 22.5ms)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mExam Load (0.2ms)[0m  SELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered exams/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 07:48:37 -0700
+
+
+Started GET "/exams" for 127.0.0.1 at 2014-04-23 07:48:41 -0700
+Processing by ExamsController#index as HTML
+  [1m[36mExam Load (0.2ms)[0m  [1mSELECT "exams".* FROM "exams"[0m
+  Rendered exams/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mExam Load (0.2ms)[0m  SELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered exams/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 07:49:42 -0700
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 07:49:45 -0700
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[35mSQL (0.3ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses" WHERE (user_id = 8)
+  Rendered dashboard/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 42ms (Views: 12.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2014-04-23 07:50:21 -0700
+Processing by ExamsController#new as HTML
+  Rendered exams/_form.html.erb (9.5ms)
+  Rendered exams/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assignments/new" for 127.0.0.1 at 2014-04-23 07:50:28 -0700
+Processing by AssignmentsController#new as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 8)[0m
+  Rendered assignments/_form.html.erb (15.2ms)
+  Rendered assignments/new.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2014-04-23 07:50:37 -0700
+Processing by ExamsController#new as HTML
+  Rendered exams/_form.html.erb (9.4ms)
+  Rendered exams/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 07:54:05 -0700
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[35mSQL (0.3ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 8)[0m
+  Rendered dashboard/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 34ms (Views: 12.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 08:06:08 -0700
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[35mSQL (0.1ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 8)[0m
+  Rendered dashboard/index.html.erb within layouts/application (96.1ms)
+Completed 500 Internal Server Error in 120ms
+
+ActionView::Template::Error (undefined method `count' for nil:NilClass):
+    101: 				Upcoming Exams
+    102: 			</div>
+    103: 			
+    104: 			<% if @exams.count > 0 %>
+    105: 				<ul class="upcoming">
+    106: 					<% for exam in @exams %>
+    107: 						<li>
+  app/views/dashboard/index.html.erb:104:in `_app_views_dashboard_index_html_erb___43464785_84631860'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.7ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 08:07:34 -0700
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[35mSQL (0.3ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 8)[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `count' for nil:NilClass):
+    102: 				Upcoming Exams
+    103: 			</div>
+    104: 			
+    105: 			<% if @exams.count > 0 %>
+    106: 				<ul class="upcoming">
+    107: 					<% for exam in @exams %>
+    108: 						<li>
+  app/views/dashboard/index.html.erb:105:in `_app_views_dashboard_index_html_erb___43464785_84609960'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.7ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 08:07:37 -0700
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[35mSQL (0.8ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 8)[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined method `count' for nil:NilClass):
+    102: 				Upcoming Exams
+    103: 			</div>
+    104: 			
+    105: 			<% if @exams.count > 0 %>
+    106: 				<ul class="upcoming">
+    107: 					<% for exam in @exams %>
+    108: 						<li>
+  app/views/dashboard/index.html.erb:105:in `_app_views_dashboard_index_html_erb___43464785_84609960'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.7ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 08:08:02 -0700
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[35mSQL (0.3ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 8)[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `count' for nil:NilClass):
+    133: 				<p class="notice">You have no exams yet, click the "+" above to create one!</p>
+    134: 			<% end %>
+    135: 			
+    136: 			<% if @completed_exams.count > 0 %>
+    137: 				<div class="list-header">
+    138: 					Completed Exams
+    139: 				</div>
+  app/views/dashboard/index.html.erb:136:in `_app_views_dashboard_index_html_erb___43464785_86199210'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.3ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[35mSQL (0.3ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 8)[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 12ms (Views: 7.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 08:08:37 -0700
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2014-04-23 08:08:40 -0700
+Processing by ExamsController#new as HTML
+  Rendered exams/_form.html.erb (0.7ms)
+  Rendered exams/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 32ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for(@exam) do |f| %>
+    2:   <% if @exam.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@exam.errors.count, "error") %> prohibited this exam from being saved:</h2>
+  app/views/exams/_form.html.erb:1:in `_app_views_exams__form_html_erb__533995543_85836730'
+  app/views/exams/new.html.erb:3:in `_app_views_exams_new_html_erb__646169767_86220720'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.6ms)
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2014-04-23 08:08:40 -0700
+Processing by ExamsController#new as HTML
+  Rendered exams/_form.html.erb (0.5ms)
+  Rendered exams/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for(@exam) do |f| %>
+    2:   <% if @exam.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@exam.errors.count, "error") %> prohibited this exam from being saved:</h2>
+  app/views/exams/_form.html.erb:1:in `_app_views_exams__form_html_erb__533995543_87543090'
+  app/views/exams/new.html.erb:3:in `_app_views_exams_new_html_erb__646169767_89205530'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.7ms)
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+Processing by ExamsController#new as HTML
+  Rendered exams/_form.html.erb (14.1ms)
+  Rendered exams/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 08:09:07 -0700
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+Processing by ExamsController#new as HTML
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" WHERE (user_id = 8)
+  Rendered exams/_form.html.erb (17.2ms)
+  Rendered exams/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 08:10:22 -0700
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+Processing by ExamsController#new as HTML
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 8)[0m
+  Rendered exams/_form.html.erb (7.8ms)
+  Rendered exams/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 08:11:07 -0700
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 08:11:29 -0700
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[35mSQL (1.2ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 8)[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 30ms (Views: 7.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2014-04-23 08:11:37 -0700
+Processing by ExamsController#new as HTML
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" WHERE (user_id = 8)
+  Rendered exams/_form.html.erb (7.3ms)
+  Rendered exams/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/exams" for 127.0.0.1 at 2014-04-23 08:12:01 -0700
+Processing by ExamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NG74YfT8ixjLX3O+T6w3+l7R7WaY/JZcAOPxrrlscDI=", "select_course"=>"", "exam"=>{"exam_name"=>"Capstone", "details"=>"None", "comments"=>"Study stuff", "date_of_exam(1i)"=>"2014", "date_of_exam(2i)"=>"4", "date_of_exam(3i)"=>"23", "date_of_exam(4i)"=>"15", "date_of_exam(5i)"=>"11", "is_complete"=>"1", "grade_received"=>"A++"}, "commit"=>"Create Exam"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "exams" ("comments", "created_at", "date_of_exam", "details", "exam_name", "grade_received", "is_complete", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["comments", "Study stuff"], ["created_at", Wed, 23 Apr 2014 15:12:01 UTC +00:00], ["date_of_exam", Wed, 23 Apr 2014 15:11:00 UTC +00:00], ["details", "None"], ["exam_name", "Capstone"], ["grade_received", 0], ["is_complete", true], ["updated_at", Wed, 23 Apr 2014 15:12:01 UTC +00:00]]
+  [1m[36m (215.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 225ms (ActiveRecord: 216.5ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[35mSQL (0.2ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 8)[0m
+  Rendered dashboard/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 08:12:02 -0700
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 08:13:55 -0700
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[35mSQL (0.1ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:13)
+Completed 500 Internal Server Error in 23ms
+
+ActiveRecord::ConfigurationError (Association named 'course' was not found on Exam; perhaps you misspelled it?):
+  app/controllers/dashboard_controller.rb:13:in `index'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.6ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[35mSQL (0.4ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:13)
+  [1m[35mSQL (0.1ms)[0m  SELECT "exams"."id" AS t0_r0, "exams"."exam_id" AS t0_r1, "exams"."exam_name" AS t0_r2, "exams"."details" AS t0_r3, "exams"."comments" AS t0_r4, "exams"."date_created" AS t0_r5, "exams"."date_of_exam" AS t0_r6, "exams"."is_complete" AS t0_r7, "exams"."grade_received" AS t0_r8, "exams"."course_id" AS t0_r9, "exams"."created_at" AS t0_r10, "exams"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "exams" LEFT OUTER JOIN "courses" ON "courses"."id" = "exams"."course_id" WHERE "exams"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY exams.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:14)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "exams"."id" AS t0_r0, "exams"."exam_id" AS t0_r1, "exams"."exam_name" AS t0_r2, "exams"."details" AS t0_r3, "exams"."comments" AS t0_r4, "exams"."date_created" AS t0_r5, "exams"."date_of_exam" AS t0_r6, "exams"."is_complete" AS t0_r7, "exams"."grade_received" AS t0_r8, "exams"."course_id" AS t0_r9, "exams"."created_at" AS t0_r10, "exams"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "exams" LEFT OUTER JOIN "courses" ON "courses"."id" = "exams"."course_id" WHERE "exams"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY exams.created_at asc[0m
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" WHERE (user_id = 8)
+  Rendered dashboard/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 76ms (Views: 12.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 08:16:35 -0700
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2014-04-23 08:16:44 -0700
+Processing by ExamsController#new as HTML
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 8)[0m
+  Rendered exams/_form.html.erb (13.6ms)
+  Rendered exams/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/exams" for 127.0.0.1 at 2014-04-23 08:17:12 -0700
+Processing by ExamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NG74YfT8ixjLX3O+T6w3+l7R7WaY/JZcAOPxrrlscDI=", "select_course"=>"9", "exam"=>{"exam_name"=>"Capstone", "details"=>"None", "comments"=>"Study stuff", "date_of_exam(1i)"=>"2014", "date_of_exam(2i)"=>"4", "date_of_exam(3i)"=>"30", "date_of_exam(4i)"=>"15", "date_of_exam(5i)"=>"16", "is_complete"=>"0", "grade_received"=>""}, "commit"=>"Create Exam"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "exams" ("comments", "course_id", "created_at", "date_of_exam", "details", "exam_name", "is_complete", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["comments", "Study stuff"], ["course_id", 9], ["created_at", Wed, 23 Apr 2014 15:17:12 UTC +00:00], ["date_of_exam", Wed, 30 Apr 2014 15:16:00 UTC +00:00], ["details", "None"], ["exam_name", "Capstone"], ["is_complete", false], ["updated_at", Wed, 23 Apr 2014 15:17:12 UTC +00:00]]
+  [1m[35m (17.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 23ms (ActiveRecord: 17.8ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 08:17:12 -0700
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[35mSQL (0.4ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:13)
+  [1m[35mSQL (0.3ms)[0m  SELECT "exams"."id" AS t0_r0, "exams"."exam_id" AS t0_r1, "exams"."exam_name" AS t0_r2, "exams"."details" AS t0_r3, "exams"."comments" AS t0_r4, "exams"."date_created" AS t0_r5, "exams"."date_of_exam" AS t0_r6, "exams"."is_complete" AS t0_r7, "exams"."grade_received" AS t0_r8, "exams"."course_id" AS t0_r9, "exams"."created_at" AS t0_r10, "exams"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "exams" LEFT OUTER JOIN "courses" ON "courses"."id" = "exams"."course_id" WHERE "exams"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY exams.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:14)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "exams"."id" AS t0_r0, "exams"."exam_id" AS t0_r1, "exams"."exam_name" AS t0_r2, "exams"."details" AS t0_r3, "exams"."comments" AS t0_r4, "exams"."date_created" AS t0_r5, "exams"."date_of_exam" AS t0_r6, "exams"."is_complete" AS t0_r7, "exams"."grade_received" AS t0_r8, "exams"."course_id" AS t0_r9, "exams"."created_at" AS t0_r10, "exams"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "exams" LEFT OUTER JOIN "courses" ON "courses"."id" = "exams"."course_id" WHERE "exams"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY exams.created_at asc[0m
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" WHERE (user_id = 8)
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (undefined method `date_due' for #<Exam:0xa390c4c>):
+    113: 								</span>
+    114: 							</div>
+    115: 							<div class="bottom">
+    116: 								Due <%= exam.date_due.to_formatted_s(:long_ordinal) %>
+    117: 							</div>
+    118: 							<div class="exam-details">
+    119: 								<div class="details">
+  app/views/dashboard/index.html.erb:116:in `block in _app_views_dashboard_index_html_erb___43464785_88627030'
+  app/views/dashboard/index.html.erb:107:in `each'
+  app/views/dashboard/index.html.erb:107:in `_app_views_dashboard_index_html_erb___43464785_88627030'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.8ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 08:18:47 -0700
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[35mSQL (1.2ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:13)
+  [1m[35mSQL (0.2ms)[0m  SELECT "exams"."id" AS t0_r0, "exams"."exam_id" AS t0_r1, "exams"."exam_name" AS t0_r2, "exams"."details" AS t0_r3, "exams"."comments" AS t0_r4, "exams"."date_created" AS t0_r5, "exams"."date_of_exam" AS t0_r6, "exams"."is_complete" AS t0_r7, "exams"."grade_received" AS t0_r8, "exams"."course_id" AS t0_r9, "exams"."created_at" AS t0_r10, "exams"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "exams" LEFT OUTER JOIN "courses" ON "courses"."id" = "exams"."course_id" WHERE "exams"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY exams.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:14)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "exams"."id" AS t0_r0, "exams"."exam_id" AS t0_r1, "exams"."exam_name" AS t0_r2, "exams"."details" AS t0_r3, "exams"."comments" AS t0_r4, "exams"."date_created" AS t0_r5, "exams"."date_of_exam" AS t0_r6, "exams"."is_complete" AS t0_r7, "exams"."grade_received" AS t0_r8, "exams"."course_id" AS t0_r9, "exams"."created_at" AS t0_r10, "exams"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "exams" LEFT OUTER JOIN "courses" ON "courses"."id" = "exams"."course_id" WHERE "exams"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY exams.created_at asc[0m
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" WHERE (user_id = 8)
+  Rendered dashboard/index.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined method `priority' for #<Exam:0xa78f6e0>):
+    122: 								<div class="details">
+    123: 									Exam Details: <br />
+    124: 									<%= exam.details %> <br /><br />
+    125: 									Priority: <%= exam.priority %>/5
+    126: 								</div>
+    127: 								<a href="<%= edit_exam_path(exam) %>" title="<%= exam.exam_name %>">View/Edit Exam</a>
+    128: 							</div>
+  app/views/dashboard/index.html.erb:125:in `block in _app_views_dashboard_index_html_erb___43464785_86973660'
+  app/views/dashboard/index.html.erb:107:in `each'
+  app/views/dashboard/index.html.erb:107:in `_app_views_dashboard_index_html_erb___43464785_86973660'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.3ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[35mSQL (0.3ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:13)
+  [1m[35mSQL (1.1ms)[0m  SELECT "exams"."id" AS t0_r0, "exams"."exam_id" AS t0_r1, "exams"."exam_name" AS t0_r2, "exams"."details" AS t0_r3, "exams"."comments" AS t0_r4, "exams"."date_created" AS t0_r5, "exams"."date_of_exam" AS t0_r6, "exams"."is_complete" AS t0_r7, "exams"."grade_received" AS t0_r8, "exams"."course_id" AS t0_r9, "exams"."created_at" AS t0_r10, "exams"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "exams" LEFT OUTER JOIN "courses" ON "courses"."id" = "exams"."course_id" WHERE "exams"."is_complete" = 'f' AND "courses"."user_id" = 8 ORDER BY exams.created_at asc
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /home/saasbook/Documents/Project/whatsdue/app/controllers/dashboard_controller.rb:14)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "exams"."id" AS t0_r0, "exams"."exam_id" AS t0_r1, "exams"."exam_name" AS t0_r2, "exams"."details" AS t0_r3, "exams"."comments" AS t0_r4, "exams"."date_created" AS t0_r5, "exams"."date_of_exam" AS t0_r6, "exams"."is_complete" AS t0_r7, "exams"."grade_received" AS t0_r8, "exams"."course_id" AS t0_r9, "exams"."created_at" AS t0_r10, "exams"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "exams" LEFT OUTER JOIN "courses" ON "courses"."id" = "exams"."course_id" WHERE "exams"."is_complete" = 't' AND "courses"."user_id" = 8 ORDER BY exams.created_at asc[0m
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" WHERE (user_id = 8)
+  Rendered dashboard/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 54ms (Views: 41.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 08:19:34 -0700

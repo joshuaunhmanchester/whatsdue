@@ -10,42 +10,40 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
-    <%= f.label :exam_id %><br>
-    <%= f.number_field :exam_id %>
+    <label>Course</label>
+    <select name="select_course">
+      <option value="">- Select a Course - </option>
+      <% @courses.each do |course| %>
+        <option value="<%= course.id %>"><%= course.class_name %></option>
+      <% end %>
+    </select>
   </div>
+    
   <div class="field">
-    <%= f.label :exam_name %><br>
+    <%= f.label :exam_name %>
     <%= f.text_field :exam_name %>
   </div>
   <div class="field">
-    <%= f.label :details %><br>
+    <%= f.label :details %>
     <%= f.text_field :details %>
   </div>
   <div class="field">
-    <%= f.label :comments %><br>
+    <%= f.label :comments %>
     <%= f.text_field :comments %>
   </div>
   <div class="field">
-    <%= f.label :date_created %><br>
-    <%= f.datetime_select :date_created %>
-  </div>
-  <div class="field">
-    <%= f.label :date_of_exam %><br>
+    <%= f.label :date_of_exam %>
     <%= f.datetime_select :date_of_exam %>
   </div>
   <div class="field">
-    <%= f.label :is_complete %><br>
+    <%= f.label :is_complete %>
     <%= f.check_box :is_complete %>
   </div>
   <div class="field">
-    <%= f.label :grade_received %><br>
+    <%= f.label :grade_received %>
     <%= f.number_field :grade_received %>
-  </div>
-  <div class="field">
-    <%= f.label :course_id %><br>
-    <%= f.number_field :course_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

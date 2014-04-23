@@ -10,6 +10,8 @@ class DashboardController < ApplicationController
    	# :include allows us to load up the entire course object as we need access to the name of each course for listing out the assignment.
    	@assignments = Assignment.all(:include => :course, :conditions => { :assignments => { :is_complete => false }, :courses => { :user_id => current_user_id } }, :order => "assignments.created_at asc" )
     @completed_assignments = Assignment.all(:include => :course, :conditions => { :assignments => { :is_complete => true }, :courses => { :user_id => current_user_id } }, :order => "assignments.created_at asc" )
+    @exams = Exam.all(:include => :course, :conditions => { :exams => { :is_complete => false }, :courses => { :user_id => current_user_id } }, :order => "exams.created_at asc" )
+    @completed_exams = Exam.all(:include => :course, :conditions => { :exams => { :is_complete => true }, :courses => { :user_id => current_user_id } }, :order => "exams.created_at asc" )
   end
   
 end

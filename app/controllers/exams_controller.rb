@@ -4,7 +4,8 @@ class ExamsController < ApplicationController
   # GET /exams
   # GET /exams.json
   def index
-    @exams = Exam.all
+    #select only the records for the given course param
+    @exams = Exam.where("course_id = ?", params[:course_id])
   end
 
   # GET /exams/1
@@ -14,26 +15,32 @@ class ExamsController < ApplicationController
 
   # GET /exams/new
   def new
+    # Construct a list of Courses that the current user has created.
+    # TODO: add logic to check if @courses is nil - if so, redirect them to create a course with notice of you must first create a course!
+    @courses = Course.where("user_id = ?", session[:user_id])
     @exam = Exam.new
   end
 
   # GET /exams/1/edit
   def edit
+    @courses = Course.where("user_id = ?", session[:user_id])
   end
 
   # POST /exams
   # POST /exams.json
   def create
+    # Build the new Exam object.
+    selected_course = params[:select_course]
     @exam = Exam.new(exam_params)
-
-    respond_to do |format|
-      if @exam.save
-        format.html { redirect_to @exam, notice: 'Exam was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @exam }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @exam.errors, status: :unprocessable_entity }
-      end
+    @exam.course_id = selected_course
+  
+  
+    # Save.
+    if @exam.save
+      redirect_to :controller => 'dashboard', :action => 'index'
+    else
+      # Failed to create, send them back to view with errors.
+      render "new"
     end
   end
 
