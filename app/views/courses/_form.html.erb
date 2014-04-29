@@ -1,36 +1,81 @@
 <p id="notice">
-    <%= notice %>
+  <%= notice %>
 </p>
 
 <%= form_for(@course) do |f| %>
+  <div id="validation-errors" style="display: none">
+  </div>
+  
+  <% if @course.errors.any? %>
+    <div class="error_explanation">
+      <ul>
+        <% @course.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-    <% if @course.errors.any? %>
-        <div class="error_explanation">
-            <ul>
-                <% @course.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-                <% end %>
-            </ul>
-        </div>
-    <% end %>
-
-    <div class="field req">
-        <label>Class Name</label>
-        <%= f.text_field :class_name %>
-    </div>
-    <div class="field req">
-        <label>Course Number (if none, use abbreviation)</label>
-        <%= f.text_field :course_number %>
-    </div>
-    <div class="field">
-        <label>Class Details</label>
-        <%= f.text_area :details %>
-    </div>
-    <div class="field">
-        <label>Teacher Name</label>
-        <%= f.text_field :teacher_name %>
-    </div>
-    <div class="field">
-        <%= f.submit "Save Class", :class => "button submit teal large" %>
-    </div>
+  <div class="field req">
+    <%= f.label :class_name %>
+    <%= f.text_field :class_name %>
+  </div>
+  <div class="field req">
+    <%= f.label :course_number %> (if none, use abbreviation)
+    <%= f.text_field :course_number %>
+  </div>
+  <div class="field">
+    <label>Class Details</label>
+    <%= f.text_area :details %>
+  </div>
+  <div class="field">
+    <%= f.label :teacher_name %>
+    <%= f.text_field :teacher_name %>
+  </div>
+  <div class="field">
+    <%= f.submit "Save Class", :class => "button submit teal large" %>
+  </div>
 <% end %>
+
+<script>
+  
+  $(function() {
+       
+    //Show Errors for not selecting a course or entering an assignment name
+    $('.submit').on('click', function(e) {
+      e.preventDefault();
+      var errors = 0;        
+      
+      // Get all fields we are checking.
+      var className = $('#course_class_name').val(); 
+      var courseNum = $('#course_course_number').val();
+      var teachName = $('#course_teacher_name').val();     
+      
+      // Begin to validate them.
+      if(className == 0) {
+        // We have to alert the error.
+        errors++;
+        $('#validation-errors').show();
+        $('#validation-errors').html('Please enter the class name.');
+      }
+      if(courseNum == 0) {
+        // We have to alert the error.
+        errors++;
+        $('#validation-errors').show();
+        $('#validation-errors').html('Please enter the course number.');
+      }
+      if(teachName == 0) {
+        // We have to alert the error.
+        errors++;
+        $('#validation-errors').show();
+        $('#validation-errors').html('Please enter the teachers name.');
+      }
+
+      // After checking fields, check errors and post.
+      if(errors == 0) {
+        // We can submit the form.
+        $('#new_course').submit();
+      }
+    });
+  });
+</script>

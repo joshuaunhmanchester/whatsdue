@@ -1,51 +1,99 @@
 <%= form_for(@assignment) do |f| %>
+    <div id="validation-errors" style="display: none">
+    </div>
+  
+  <% if @assignment.errors.any? %>
+      <div class="error_explanation">
+          <ul>
+              <% @assignment.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+          </ul>
+      </div>
+  <% end %>
 
-    <% if @assignment.errors.any? %>
-        <div class="error_explanation">
-            <ul>
-                <% @assignment.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-                <% end %>
-            </ul>
-        </div>
-    <% end %>
-
-    <div class="field">
-      <label>Course</label>
-      <select name="select_course">
-        <option value="">- Select a Course - </option>
-        <% @courses.each do |course| %>
-          <option value="<%= course.id %>"><%= course.class_name %></option>
-        <% end %>
-      </select>
-    </div>
-
-    <div class="field">
-      <label>Assignment Name</label>
-      <%= f.text_field :assignment_name %>
-    </div>
-    <div class="field">
-       <label>Assignment Details</label>
-      <%= f.text_field :details %>
-    </div>
-    <div class="field">
-       <label>Priority for assignment (1 - 5; 5 being most important)</label>
-       <%= f.text_field :priority %>
-    </div>
-    <div class="field datepicker">
-      <label>Due Date</label>
-      <%= f.datetime_select :date_due, ampm: true, order: [:month, :day, :year] %>
-    </div>
-    <div class="field datepicker">
-      <label>Is Complete</label>
-      <%= f.check_box :is_complete %>
-    </div>
-    <div class="field datepicker">
-      <label>Grade Received</label>
-      <%= f.text_field :grade_received, :class => "small" %>
-    </div>
-
-    <div class="field">
-        <%= f.submit "Save Assignment", :class => "button submit teal" %>
-    </div>
+  <div class="field">
+    <%= f.label :select_course %>
+    <select name="select_course" id="select_course">
+      <option value="0">- Select a Course - </option>
+      <% @courses.each do |course| %>
+        <option value="<%= course.id %>"><%= course.class_name %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="field">
+    <%= f.label :assignment_name %>
+    <%= f.text_field :assignment_name %>
+  </div>
+  <div class="field">
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+  </div>
+  <div class="field">
+     <%= f.label :priority %>
+     <%= f.select(:priority , options_for_select(@priorities))%> (1-5) 5 being the highest
+  </div>
+  <div class="field datepicker">
+    <label>Due Date</label>
+    <%= f.datetime_select :date_due, ampm: true, order: [:month, :day, :year] %>
+  </div>
+  <div class="field">
+    <%= f.label :is_complete %>
+    <%= f.check_box :is_complete %>
+  </div>
+  <div class="field">
+      <%= f.label :grade_received, :id => "grade_received", :style => "display:none" %>
+      <%= f.text_field :grade_received, :style => "display:none" %>
+  </div>
+  <div class="field">
+    <%= f.submit "Save Assignment", :class => "button submit teal" %>
+  </div>
 <% end %>
+
+<script>
+  
+  $(function() {
+    
+    //Show the Grade Recieved Input and Label when IS COMPLETE is checked
+    $('#assignment_is_complete').on('click', function() {
+      if(this.checked) {
+        document.getElementById('assignment_grade_received').style['display'] = 'block';
+        document.getElementById('grade_received').style['display'] = 'block';
+      } else {
+        document.getElementById('assignment_grade_received').style['display'] = 'none';
+        document.getElementById('grade_received').style['display'] = 'none';
+      }
+    });
+     
+     
+    //Show Errors for not selecting a course or entering an assignment name
+    $('.submit').on('click', function(e) {
+      e.preventDefault();
+      var errors = 0;        
+      
+      // Get all fields we are checking.
+      var selectedCourse = $('#select_course').val();
+      var assignmentName = $('#assignment_assignment_name').val();      
+      
+      // Begin to validate them.
+      if(selectedCourse == 0) {
+        // We have to alert the error.
+        errors++;
+        $('#validation-errors').show();
+        $('#validation-errors').html('Please select a course.');
+      }
+      if(assignmentName == 0) {
+        // We have to alert the error.
+        errors++;
+        $('#validation-errors').show();
+        $('#validation-errors').html('Please name the assignment.');
+      }
+      
+      // After checking fields, check errors and post.
+      if(errors == 0) {
+        // We can submit the form.
+        $('#new_assignment').submit();
+      }
+    });
+  });
+</script>
