@@ -27363,3 +27363,96 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-17 18:13:23
 
 
 Started GET "/assets/icomoon.svg?zh3f0n" for 127.0.0.1 at 2014-04-17 18:13:23 -0400
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2014-04-29 13:11:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (3.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/joshuaanderson/School/Web App Development/final_project/whatsdue/app/controllers/dashboard_controller.rb:11)
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 'f' AND "courses"."user_id" = 7 ORDER BY assignments.created_at asc[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from index at /Users/joshuaanderson/School/Web App Development/final_project/whatsdue/app/controllers/dashboard_controller.rb:12)
+  [1m[35mSQL (0.3ms)[0m  SELECT "assignments"."id" AS t0_r0, "assignments"."assignment_id" AS t0_r1, "assignments"."assignment_name" AS t0_r2, "assignments"."details" AS t0_r3, "assignments"."priority" AS t0_r4, "assignments"."date_created" AS t0_r5, "assignments"."date_due" AS t0_r6, "assignments"."is_complete" AS t0_r7, "assignments"."grade_received" AS t0_r8, "assignments"."course_id" AS t0_r9, "assignments"."created_at" AS t0_r10, "assignments"."updated_at" AS t0_r11, "courses"."id" AS t1_r0, "courses"."course_id" AS t1_r1, "courses"."class_name" AS t1_r2, "courses"."details" AS t1_r3, "courses"."teacher_name" AS t1_r4, "courses"."user_id" AS t1_r5, "courses"."created_at" AS t1_r6, "courses"."updated_at" AS t1_r7, "courses"."course_number" AS t1_r8 FROM "assignments" LEFT OUTER JOIN "courses" ON "courses"."id" = "assignments"."course_id" WHERE "assignments"."is_complete" = 't' AND "courses"."user_id" = 7 ORDER BY assignments.created_at asc
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 7)[0m
+  Rendered dashboard/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 224ms (Views: 128.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/exams.css?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/app.dashboard.js?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/exams.js?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/assets/icomoon.svg?zh3f0n" for 127.0.0.1 at 2014-04-29 13:11:20 -0400
+
+
+Started GET "/courses/new" for 127.0.0.1 at 2014-04-29 13:12:57 -0400
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (14.3ms)
+  Rendered courses/new.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assignments/new" for 127.0.0.1 at 2014-04-29 13:13:00 -0400
+Processing by AssignmentsController#new as HTML
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses" WHERE (user_id = 7)
+  Rendered assignments/_form.html.erb (22.3ms)
+  Rendered assignments/new.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assignments/6/edit" for 127.0.0.1 at 2014-04-29 13:13:20 -0400
+Processing by AssignmentsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mAssignment Load (0.4ms)[0m  SELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (user_id = 7)[0m
+  Rendered assignments/_form.html.erb (6.9ms)
+  Rendered assignments/edit.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 30ms (Views: 26.0ms | ActiveRecord: 0.8ms)
