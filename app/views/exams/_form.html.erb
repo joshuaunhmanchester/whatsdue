@@ -1,4 +1,7 @@
 <%= form_for(@exam) do |f| %>
+    <div id="validation-errors" style="display: none">
+    </div>
+  
   <% if @exam.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@exam.errors.count, "error") %> prohibited this exam from being saved:</h2>
@@ -10,44 +13,91 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
-    <%= f.label :exam_id %><br>
-    <%= f.number_field :exam_id %>
+    <%= f.label :select_course %>
+    <select name="select_course" id="select_course">
+      <option value="">- Select a Course - </option>
+      <% @courses.each do |course| %>
+        <option value="<%= course.id %>"><%= course.class_name %></option>
+      <% end %>
+    </select>
   </div>
+    
   <div class="field">
-    <%= f.label :exam_name %><br>
+    <%= f.label :exam_name %>
     <%= f.text_field :exam_name %>
   </div>
   <div class="field">
-    <%= f.label :details %><br>
+    <%= f.label :details %>
     <%= f.text_field :details %>
   </div>
   <div class="field">
-    <%= f.label :comments %><br>
+    <%= f.label :comments %>
     <%= f.text_field :comments %>
   </div>
   <div class="field">
-    <%= f.label :date_created %><br>
-    <%= f.datetime_select :date_created %>
-  </div>
-  <div class="field">
-    <%= f.label :date_of_exam %><br>
+    <%= f.label :date_of_exam %>
     <%= f.datetime_select :date_of_exam %>
   </div>
   <div class="field">
-    <%= f.label :is_complete %><br>
+    <%= f.label :is_complete %>
     <%= f.check_box :is_complete %>
   </div>
   <div class="field">
-    <%= f.label :grade_received %><br>
-    <%= f.number_field :grade_received %>
-  </div>
-  <div class="field">
-    <%= f.label :course_id %><br>
-    <%= f.number_field :course_id %>
+    <%= f.label :grade_received, :id => "grade_received", :style => "display:none"%>
+    <%= f.text_field :grade_received, :style => "display:none" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save Exam", :class => "button submit teal" %>
   </div>
 <% end %>
+
+
+<script>
+  
+  $(function() {
+    
+    //Show the Grade Recieved Input and Label when IS COMPLETE is checked
+    $('#exam_is_complete').on('click', function() {
+      if(this.checked) {
+        document.getElementById('exam_grade_received').style['display'] = 'block';
+        document.getElementById('grade_received').style['display'] = 'block';
+      } else {
+        document.getElementById('exam_grade_received').style['display'] = 'none';
+        document.getElementById('grade_received').style['display'] = 'none';
+      }
+    });
+     
+     
+    //Show Errors for not selecting a course or entering an exam name
+    $('.submit').on('click', function(e) {
+      e.preventDefault();
+      var errors = 0;        
+      
+      // Get all fields we are checking.
+      var selectedCourse = $('#select_course').val();
+      var examName = $('#exam_exam_name').val();      
+      
+      // Begin to validate them.
+      if(selectedCourse == 0) {
+        // We have to alert the error.
+        errors++;
+        $('#validation-errors').show();
+        $('#validation-errors').html('Please select a course.');
+      }
+      if(examName == 0) {
+        // We have to alert the error.
+        errors++;
+        $('#validation-errors').show();
+        $('#validation-errors').html('Please name the exam.');
+      }
+      
+      // After checking fields, check errors and post.
+      if(errors == 0) {
+        // We can submit the form.
+        $('#new_exam').submit();
+      }
+    });
+  });
+</script>

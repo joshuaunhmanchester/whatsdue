@@ -28,7 +28,8 @@
 			<div class="list-header">
 				Upcoming Assignments
 			</div>
-			<% if @assignments.count > 0 %>
+			
+			<% if @assignments != nil && @assignments.count > 0 %>
 				<ul class="upcoming">
 					<% for assignment in @assignments %>
 						<li>
@@ -84,36 +85,75 @@
 			
 		</div>
 	</div>
+	
+	
+	
+	
+	
 	<div class="module omega">
 		<h2 title="Listing your upcoming Exams and Projects sorted by Due Date and Priority">
 			Exams / Projects
 			<div class="inline-icon-button">
-				<a href="add-exam.html" title="Add a new exam"><span class="icon icon-plus small"></span></a>
+				<a href="exams/new" title="Add a new exam"><span class="icon icon-plus small"></span></a>
 			</div>
 		</h2>
 		<div class="inner">
-			<ul>
-				<li>
-					<div class="top">
-						<span class="class-number">CIS 795</span> 
-						<span class="exam-trigger" title="Click to view details">
-							LISP Exam
-						</span>
-					</div>
-					<div class="bottom">
-						When: Today
-					</div>
-					<div class="exam-details">
-						<div class="details">
-							Grade Received: N/A
-						</div>
-						<div class="details">
-							Exam/Project Details: <br />
-						</div>
-						<a href="view-exam.html">View Exam</a>
-					</div>
-				</li> 
-			</ul>
-		</div>
+			<div class="list-header">
+				Upcoming Exams
+			</div>
+			
+			<% if @exams != nil && @exams.count > 0 %>
+				<ul class="upcoming">
+					<% for exam in @exams %>
+						<li>
+							<div class="top">
+								<span class="class-number"><%= exam.course.course_number %></span>
+								<span class="exam-trigger" title="Click to view exam details">
+									<%= exam.exam_name %>
+								</span>
+							</div>
+							<div class="bottom">
+								Due <%= exam.date_of_exam.to_formatted_s(:long_ordinal) %>
+							</div>
+							<div class="exam-details">
+								<div class="details">
+									Grade Recieved: <%= exam.grade_received %>
+								</div>
+								<div class="details">
+									Exam Details: <br />
+									<%= exam.details %> <br />
+								</div>
+								<a href="<%= edit_exam_path(exam) %>" title="<%= exam.exam_name %>">View/Edit Exam</a>
+							</div>
+						</li>
+					<% end %>
+				</ul>
+			<% else %>
+				<p class="notice">You have no exams yet, click the "+" above to create one!</p>
+			<% end %>
+			
+			<% if @completed_exams != nil && @completed_exams.count > 0 %>
+				<div class="list-header">
+					Completed Exams
+				</div>
+				<ul class="completed">
+					<% for completed_exam in @completed_exams %>
+						<li>
+							<div class="top">
+								<span class="class-number"><%= completed_exam.course.course_number %></span>
+								<span class="exam-trigger" title="Click to view exam details">
+									<%= completed_exam.exam_name %>
+								</span>
+							</div>
+							<div class="bottom">
+								Grade Received <%= completed_exam.grade_received %>
+							</div>
+						</li>
+					<% end %>
+				</ul>
+			<% else %>
+				<!-- <p class="notice">You have no completed exams yet, click the "+" above to create one!</p> -->
+			<% end %>
+			
 	</div>
 </div>

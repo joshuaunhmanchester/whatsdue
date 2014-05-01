@@ -21,6 +21,7 @@ class AssignmentsController < ApplicationController
     # TODO: add logic to check if @courses is nil - if so, redirect them to create a course with notice of you must first create a course!
     @courses = Course.where("user_id = ?", session[:user_id])
     @assignment = Assignment.new
+    @priorities = [1,2,3,4,5]
   end
 
   # GET /assignments/1/edit
